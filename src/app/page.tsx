@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   const members = [{ title: "代表理事", name: "竹下義晃" }];
 
