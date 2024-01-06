@@ -20,8 +20,8 @@ export default function Home() {
           <h1 className="text-2xl font-bold">開催カンファレンス</h1>
           <div className="mt-3">
             <ul className="list-none">
-              {conferences.map((conference) => (
-                <li>
+              {conferences.map((conference, index) => (
+                <li key={index}>
                   <a href={conference.url} className="text-blue-600">
                     {conference.name}
                   </a>
@@ -44,8 +44,8 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {members.map((member) => (
-                <tr>
+              {members.map((member, index) => (
+                <tr key={index}>
                   <td className="border px-4 py-2 border-black">
                     {member.title}
                   </td>
