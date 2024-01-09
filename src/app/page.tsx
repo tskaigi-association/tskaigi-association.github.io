@@ -1,5 +1,10 @@
 export default function Home() {
-  const members = [{ title: "代表理事", name: "竹下義晃" }];
+  const members = [
+    { title: "代表理事", name: "竹下義晃" },
+    { title: "理事", name: "清水俊博" },
+    { title: "理事", name: "丹羽健" },
+    { title: "理事", name: "塩原大介" },
+  ];
 
   const conferences = [{ name: "TSKaigi 2024", url: "https://tskaigi.org" }];
 
