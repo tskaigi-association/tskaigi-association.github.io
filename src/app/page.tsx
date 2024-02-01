@@ -25,7 +25,7 @@ export default function Home() {
             <ul className="list-none">
               {conferences.map((conference, index) => (
                 <li key={index}>
-                  <a href={conference.url} className="text-blue-600">
+                  <a href={conference.url} className="text-blue-600 text-xl">
                     {conference.name}
                   </a>
                 </li>
@@ -73,6 +73,20 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <footer className="bg-brand p-3">
+        <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+          <span className="text-sm text-gray-200 sm:text-center dark:text-gray-400">
+            © 2024 TSKaigi Association. All Rights Reserved.
+          </span>
+          <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-200 dark:text-gray-400 sm:mt-0">
+            <li>
+              <a href="/about" className="hover:underline me-4 md:me-6">
+                about
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
     </main>
   );
 }
