@@ -6,8 +6,21 @@ export default function Home() {
     { title: "理事", name: "塩原大介" },
   ];
 
-  const conferences = [{ name: "TSKaigi 2024", url: "https://tskaigi.org" }];
-
+  const conferences = [
+    { category: "東京", name: "TSKaigi 2024", url: "https://tskaigi.org" },
+    {
+      category: "関西",
+      name: "TSKaigi Kansai 2024",
+      url: "https://kansai.tskaigi.org",
+    },
+  ];
+  const groupByCategory = conferences.reduce((acc, conference) => {
+    acc.set(conference.category, [
+      ...(acc.get(conference.category) || []),
+      conference,
+    ]);
+    return acc;
+  }, new Map<string, typeof conferences>());
   return (
     <main className="flex min-h-screen flex-col items-left">
       <div className="flex flex-col bg-brand p-5 rounded-b-md">
@@ -22,15 +35,25 @@ export default function Home() {
         <div className="flex flex-col mb-5">
           <h1 className="text-2xl font-bold">開催カンファレンス</h1>
           <div className="mt-3">
-            <ul className="list-none">
-              {conferences.map((conference, index) => (
-                <li key={index}>
-                  <a href={conference.url} className="text-blue-600 text-xl">
-                    {conference.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {Array.from(groupByCategory.entries()).map(
+              ([category, conferences]) => (
+                <div key={category}>
+                  <h2 className="text-xl font-bold">{category}</h2>
+                  <ul className="list-none p-1">
+                    {conferences.map((conference, index) => (
+                      <li key={index}>
+                        <a
+                          href={conference.url}
+                          className="text-blue-600 text-xl"
+                        >
+                          {conference.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            )}
           </div>
         </div>
         <div className="flex flex-col mb-5">
@@ -68,9 +91,16 @@ export default function Home() {
         </div>
         <div className="flex flex-col">
           <h1 className="text-2xl font-bold">決算報告</h1>
-          <p className="text-xl p-1">
-            初年度のため、現在決算資料はございません。
-          </p>
+          <ul className="list-disc list-inside text-xl p-1">
+            <li>
+              <a
+                href="./TSKaigiAssociation_financial_report_1st_period.pdf"
+                className="text-blue-600"
+              >
+                第一期(2023/12~2024/9) 決算報告書
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <footer className="bg-brand p-3">
