@@ -7,13 +7,23 @@ export default function Home() {
   ];
 
   const conferences = [
-    { category: "東京", name: "TSKaigi 2024", url: "https://tskaigi.org" },
+    { category: "東京", name: "TSKaigi 2024", url: "https://2024.tskaigi.org" },
     {
       category: "関西",
       name: "TSKaigi Kansai 2024",
       url: "https://kansai.tskaigi.org",
     },
   ];
+  const reports = [
+    {
+      title: "第一期(2023/12~2024/9)",
+      financialReportUrl:
+        "./2024/TSKaigiAssociation_financial_report_1st_period.pdf",
+      businessReportUrl:
+        "./2024/TSKaigiAssociation_business_report_1st_period.pdf",
+    },
+  ];
+
   const groupByCategory = conferences.reduce((acc, conference) => {
     acc.set(conference.category, [
       ...(acc.get(conference.category) || []),
@@ -92,14 +102,18 @@ export default function Home() {
         <div className="flex flex-col">
           <h1 className="text-2xl font-bold">決算報告</h1>
           <ul className="list-disc list-inside text-xl p-1">
-            <li>
-              <a
-                href="./TSKaigiAssociation_financial_report_1st_period.pdf"
-                className="text-blue-600"
-              >
-                第一期(2023/12~2024/9) 決算報告書
-              </a>
-            </li>
+            {reports.map((report, index) => (
+              <li key={index}>
+                {report.title}{" "}
+                <a href={report.financialReportUrl} className="text-blue-600">
+                  決算報告書
+                </a>
+                &nbsp;
+                <a href={report.businessReportUrl} className="text-blue-600">
+                  事業報告書
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
