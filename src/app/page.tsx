@@ -20,7 +20,7 @@ export default function Home() {
       financialReportUrl:
         "./2024/TSKaigiAssociation_financial_report_1st_period.pdf",
       businessReportUrl:
-        "./2024/TSKaigiAssociation_business_report_1st_period.pdf",
+        "./2024/tskaigiassociation_business_report_1st_period.pdf",
     },
   ];
 
