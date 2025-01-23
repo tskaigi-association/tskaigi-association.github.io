@@ -8,6 +8,7 @@ export default function Home() {
 
   const conferences = [
     { category: "東京", name: "TSKaigi 2024", url: "https://2024.tskaigi.org" },
+    { category: "東京", name: "TSKaigi 2025", url: "https://2025.tskaigi.org" },
     {
       category: "関西",
       name: "TSKaigi Kansai 2024",
