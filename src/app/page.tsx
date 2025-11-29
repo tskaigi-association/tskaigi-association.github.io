@@ -23,6 +23,13 @@ export default function Home() {
       businessReportUrl:
         "./2024/tskaigiassociation_business_report_1st_period.pdf",
     },
+    {
+      title: "第二期(2024/10~2025/9)",
+      financialReportUrl:
+        "./2024/TSKaigiAssociation_financial_report_2nd_period.pdf",
+      businessReportUrl:
+        "./2024/tskaigiassociation_business_report_2nd_period.pdf",
+    },
   ];
 
   const groupByCategory = conferences.reduce((acc, conference) => {
