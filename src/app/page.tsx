@@ -4,6 +4,7 @@ export default function Home() {
     { title: "理事", name: "清水俊博" },
     { title: "理事", name: "丹羽健" },
     { title: "理事", name: "塩原大介" },
+    { title: "理事", name: "緑川達也" },
   ];
 
   const conferences = [
@@ -13,6 +14,11 @@ export default function Home() {
       category: "関西",
       name: "TSKaigi Kansai 2024",
       url: "https://kansai.tskaigi.org",
+    },
+    {
+      category: "北陸",
+      name: "TSKaigi Hokuriku 2025",
+      url: "https://hokuriku.tskaigi.org/",
     },
   ];
   const reports = [
